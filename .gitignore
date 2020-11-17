@@ -3,4 +3,6 @@
 .RData
 .Ruserdata
 .Data
+.derby.log
 .Raw
+.logs
