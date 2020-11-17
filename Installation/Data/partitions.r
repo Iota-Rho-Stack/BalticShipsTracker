@@ -3,6 +3,11 @@
 # Load magrittr.
 base::library(magrittr)
 
+# Clean House
+if(base::dir.exists('Data')){
+  base::unlink(x = 'Data', recursive = T)
+}
+
 if(!sparklyr::spark_install_find()$installed){
   sparklyr::spark_install(version = "2.1.0")
   if(!base::dir.exists('Data')){
