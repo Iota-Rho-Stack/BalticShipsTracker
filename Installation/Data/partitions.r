@@ -38,7 +38,9 @@ if(!base::dir.exists('Data')){
           dplyr::filter(SHIPNAME == NAME) %>%
           sparklyr::sdf_coalesce(partitions = 1) %>%
           sparklyr::spark_write_csv(path = base::paste('Data/Partition',TYPE,ID,sep = '/'), mode = 'append')
+        base::print('=')
       }
+      base::print('+')
     }
     base::print('.')
   }
