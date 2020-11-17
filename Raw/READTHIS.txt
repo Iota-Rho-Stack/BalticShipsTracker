@@ -1,0 +1,4 @@
+####
+Place raw Baltic ships data in this folder.
+Rename 'raw.csv'.
+###

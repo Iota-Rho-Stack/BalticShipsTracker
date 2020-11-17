@@ -1,0 +1,1 @@
+sparklyr::spark_connect(master = "local")
