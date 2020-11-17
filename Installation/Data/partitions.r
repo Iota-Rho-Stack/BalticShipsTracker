@@ -3,7 +3,8 @@
 # Load magrittr.
 base::library(magrittr)
 
-if(sparklyr::spark_install_find()$installed){
+if(!sparklyr::spark_install_find()$installed){
+  sparklyr::spark_install(version = "2.1.0")
   if(!base::dir.exists('Data')){
     base::dir.create('Data')
     ships_sdf <- sparklyr::spark_read_csv(
