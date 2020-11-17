@@ -26,7 +26,7 @@ if(!base::dir.exists('Data')){
   ships_sdf %>%
     dplyr::select(c("SHIPNAME","SHIP_ID","ship_type")) %>%
     dplyr::distinct() %>%
-    dplyr::mutate(SHIP_ID_str = as.character(SHIP_ID)) %>%
+    dplyr::mutate(SHIP_ID_str = SHIP_ID %>% base::as.character()) %>%
     dplyr::select(-c("SHIP_ID")) %>%
     sparklyr::sdf_coalesce(partitions = 1) %>%
     sparklyr::spark_write_csv(path = 'Data/ShipName&ID&Type')
