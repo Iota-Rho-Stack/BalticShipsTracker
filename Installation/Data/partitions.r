@@ -72,8 +72,8 @@ if(!sparklyr::spark_install_find()$installed){
             sparklyr::spark_write_csv(path = base::paste('Data/Partition',TYPE,ID,sep = '/'), mode = 'append')
         }
       }
+      base::print('.')
     }
-    base::print('.')
   }
   base::print('n\Partition Complete.')
 }
