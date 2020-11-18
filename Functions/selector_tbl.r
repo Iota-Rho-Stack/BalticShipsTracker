@@ -13,6 +13,8 @@ function(){
                     stringr::str_replace_all(pattern = '6',replacement = 'A') %>%
                     stringr::str_replace_all(pattern = '7',replacement = 'S') %>%
                     stringr::str_replace_all(pattern = '8',replacement = 'D') %>%
-                    stringr::str_replace_all(pattern = '9',replacement = 'F')) %>%
+                    stringr::str_replace_all(pattern = '9',replacement = 'F') %>%
+                    stringr::str_replace_all(pattern = '.',replacement = '') %>%
+                    stringr::str_replace_all(pattern = 'e-',replacement = '')) %>%
     dplyr::select(-c("SHIP_ID_str"))
 }
